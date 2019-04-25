@@ -1,5 +1,3 @@
-import sys
-import ctypes
 import subprocess
 import os
 

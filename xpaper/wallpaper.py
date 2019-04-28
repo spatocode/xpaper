@@ -1,6 +1,6 @@
 import sys
-import windows
-import linux
+from xpaper import windows
+from xpaper import linux
 
 
 def change(imagepath):

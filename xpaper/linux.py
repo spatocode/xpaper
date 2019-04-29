@@ -1,7 +1,7 @@
 import subprocess
 import os
 
-def setwallper(imagepath):
+def setwallpaper(imagepath):
     desktop_session = os.environ.get("DESKTOP_SESSION")
     if desktop_session is not None:
         desktop_session = desktop_session.lower()
@@ -20,4 +20,6 @@ def setwallper(imagepath):
             except:
                 subprocess.Popen("pcmanfm --set-wallpaper %s --wallpaper-mode=scaled" % imagepath)
         elif desktop_session == "xfce" or desktop_session.startswith("xubuntu"):
-            subprocess.Popen("xfconf-query", "-c", "xfce4-desktop", "-p", "/backdrop/screen0/monitor0/workspace0/last-image", "-s", imagepath)       
+            subprocess.Popen("xfconf-query", "-c", "xfce4-desktop", "-p", "/backdrop/screen0/monitor0/workspace0/last-image", "-s", imagepath)
+        elif desktop_session in ["kde", "kde3", "trinity"]:
+            subprocess.Popen("dcop kdesktop KBackgroundIface setWallpaper 0 '%s' 6" % imagepath)

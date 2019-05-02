@@ -1,5 +1,6 @@
 import subprocess
 import os
+import sys
 
 def setwallpaper(imagepath):
     desktop_session = os.environ.get("DESKTOP_SESSION")
@@ -23,3 +24,13 @@ def setwallpaper(imagepath):
             subprocess.Popen("xfconf-query", "-c", "xfce4-desktop", "-p", "/backdrop/screen0/monitor0/workspace0/last-image", "-s", imagepath)
         elif desktop_session in ["kde", "kde3", "trinity"]:
             subprocess.Popen("dcop kdesktop KBackgroundIface setWallpaper 0 '%s' 6" % imagepath)
+        elif desktop_session in ["fluxbox", "jwm", "openbox", "afterstep"]:
+            try:
+                subprocess.Popen("fbsetbg", imagepath)
+            except:
+                sys.stderr.write("ERROR: Failed to set wallpaper with fbsetbg!\n")
+                sys.stderr.write("Please make sure you have fbsetbg installed.\n")
+        elif desktop_session == "blackbox":
+            subprocess.Popen("bsetbg", "-full", imagepath)
+        elif desktop_session == "windowmaker":
+            subprocess.Popen("wmsetbg -s -u %s" % imagepath, shell=True)

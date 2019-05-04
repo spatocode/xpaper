@@ -5,7 +5,7 @@ with open("README.md", "r") as f:
 
 setuptools.setup(
     name="Xpaper",
-    version="0.0.0",
+    version="0.1.0",
     author="Ekene Izukanne",
     author_email="ekeneizukanne@gmail.com",
     description="Cross platform library for managing desktop wallpaper",

@@ -34,3 +34,13 @@ def setwallpaper(imagepath):
             subprocess.Popen("bsetbg", "-full", imagepath)
         elif desktop_session == "windowmaker":
             subprocess.Popen("wmsetbg -s -u %s" % imagepath, shell=True)
+
+
+def getwallpaper():
+    desktop_session = os.environ.get("DESKTOP_SESSION")
+    if desktop_session is not None:
+        desktop_session = desktop_session.lower()
+        if desktop_session == "XFCE":
+            subprocess.Popen("xfconf-query", "-c", "xfce4-desktop", "-p", "/backdrop/screen0/monitor0/workspace0/last-image")
+        elif desktop_session == "MATE":
+            subprocess.Popen("dconf", "read", "/org/mate/desktop/background/picture-filename")

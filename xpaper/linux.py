@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+# Copyright (c) 2019, Ekene Izukanne
+# Xpaper is under the MIT license. See the LICENSE file at the root of the project for the detailed license terms.
+
+
 import subprocess
 import os
 import sys
@@ -41,6 +46,6 @@ def getwallpaper():
     if desktop_session is not None:
         desktop_session = desktop_session.lower()
         if desktop_session == "XFCE":
-            subprocess.Popen("xfconf-query", "-c", "xfce4-desktop", "-p", "/backdrop/screen0/monitor0/workspace0/last-image")
+            return subprocess.Popen("xfconf-query", "-c", "xfce4-desktop", "-p", "/backdrop/screen0/monitor0/workspace0/last-image")
         elif desktop_session == "MATE":
-            subprocess.Popen("dconf", "read", "/org/mate/desktop/background/picture-filename")
+            return subprocess.Popen("dconf", "read", "/org/mate/desktop/background/picture-filename")

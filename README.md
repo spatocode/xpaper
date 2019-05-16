@@ -36,3 +36,10 @@ The path to image to be used as desktop wallpaper
 
 ### .get()
 Returns the path of the current desktop wallpaper.
+
+
+# LICENSE
+
+MIT License
+
+Copyright (c) 2019 Ekene Izukanne

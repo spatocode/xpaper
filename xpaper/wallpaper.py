@@ -9,6 +9,10 @@ from xpaper import linux
 
 
 def change(imagepath):
+    """
+    Changes the desktop wallpaper
+    ``imagepath``: an absolute path to the image
+    """
     if sys.platform in ["win32", "cygwin"]:
         windows.setwallpaper(imagepath)
     else:
@@ -16,6 +20,9 @@ def change(imagepath):
 
 
 def get():
+    """
+    Returns the path to the current desktop wallpaper
+    """
     if sys.platform in ["win32", "cygwin"]:
         return windows.getwallpaper()
     else:

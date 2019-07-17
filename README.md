@@ -19,7 +19,7 @@ $ pip install xpaper
 ```py
 from xpaper import wallpaper
 
-wallpaper.change("wallpaper.jpg)
+wallpaper.change("C:/Users/Spatocode/wallpaper.jpg")    # absolute path to the image
 
 wallpaper.get()     # "/Users/Spatocode/wallpaper.jpg"
 ```

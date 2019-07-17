@@ -32,7 +32,7 @@ Changes the desktop wallpaper
 #### imagepath
 Type: string
 
-The path to image to be used as desktop wallpaper
+an absolute path to the image
 
 ### .get()
 Returns the path of the current desktop wallpaper.

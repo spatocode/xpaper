@@ -1,4 +1,4 @@
-# Xpaper
+# Xpaper  ![version](https://img.shields.io/pypi/v/Xpaper) ![downloads](https://img.shields.io/pypi/dm/Xpaper) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) ![issues](https://img.shields.io/github/issues/spatocode/Xpaper) ![build](https://img.shields.io/travis/spatocode/Xpaper)
 
 Cross-platform library for changing desktop wallpaper
 
@@ -40,6 +40,6 @@ Returns the path of the current desktop wallpaper.
 
 # LICENSE
 
-MIT License
+[MIT License](http://www.github.com/spatocode/Xpaper/blob/master/LICENSE)
 
 Copyright (c) 2019 Ekene Izukanne

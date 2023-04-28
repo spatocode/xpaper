@@ -10,7 +10,7 @@ SPI_GETDESKWALLPAPER = 0x0073
 
 def setwallpaper(imagepath):
     imagepath = imagepath.replace("/", "\\")
-    if sys.version_info[0] is 2:
+    if sys.version_info[0] == 2:
         ctypes.windll.user32.SystemParametersInfoA(SPI_SETDESKWALLPAPER, 0, imagepath, 3)
     else:
         ctypes.windll.user32.SystemParametersInfoW(SPI_SETDESKWALLPAPER, 0, imagepath, 3)
@@ -19,7 +19,7 @@ def setwallpaper(imagepath):
 def getwallpaper():
     unicode_buffer = ctypes.create_unicode_buffer(512)
     string_buffer = ctypes.create_string_buffer(512)
-    if sys.version_info[0] is 2:
+    if sys.version_info[0] == 2:
         try:
             ctypes.windll.user32.SystemParametersInfoA(SPI_GETDESKWALLPAPER,len(string_buffer),string_buffer,0)
             return string_buffer.value
